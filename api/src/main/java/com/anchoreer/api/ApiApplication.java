@@ -1,13 +1,13 @@
-package com.anchoreer.chattingservice;
+package com.anchoreer.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ChattingServiceApplication {
+public class ApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ChattingServiceApplication.class, args);
+        SpringApplication.run(ApiApplication.class, args);
     }
 
 }
