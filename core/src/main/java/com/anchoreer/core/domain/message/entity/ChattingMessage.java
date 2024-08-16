@@ -27,6 +27,9 @@ public class ChattingMessage extends BaseEntity {
     @Comment(value = "nickname")
     private String nickname;
 
+    @Comment(value = "유저 id")
+    private String userId;
+
     @Comment(value = "채팅방 id")
     private Long chattingRoomId;
 

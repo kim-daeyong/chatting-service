@@ -23,6 +23,10 @@ public class User extends BaseEntity {
     @Comment(value = "id")
     private Long id;
 
+    @Comment(value = "유저 id")
+    @Column(length = 50, nullable = false, unique = true)
+    private String userId;
+
     @Comment(value = "이메일")
     @Column(length = 50, nullable = false, unique = true)
     private String email;

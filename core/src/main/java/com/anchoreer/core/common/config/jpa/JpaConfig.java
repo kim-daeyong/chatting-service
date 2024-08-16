@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaAuditing
-@EntityScan(basePackages = "com.anchoreer.core.domain.entity")
+@EntityScan(basePackages = "com.anchoreer.core.domain.*.entity")
 @EnableJpaRepositories(basePackages = "com.anchoreer.core.domain.*.repository")
 public class JpaConfig {
 }
