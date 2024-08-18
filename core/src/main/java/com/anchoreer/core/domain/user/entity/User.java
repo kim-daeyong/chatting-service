@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name= "user")
+@Table(name= "users")
 @Entity
 public class User extends BaseEntity {
 
@@ -32,5 +32,5 @@ public class User extends BaseEntity {
     private String email;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<UserChattingRoom> memberGroupInfoEntities = new ArrayList<>();
+    private List<UserChattingRoom> userChattingRooms = new ArrayList<>();
 }

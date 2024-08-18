@@ -13,7 +13,7 @@ import org.hibernate.annotations.Comment;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name= "user_chatting_room")
+@Table(name= "users_chatting_room")
 @Entity
 public class UserChattingRoom extends BaseEntity {
     @Id
@@ -29,7 +29,7 @@ public class UserChattingRoom extends BaseEntity {
     private ChattingRoom chattingRoom;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user", referencedColumnName = "id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "users", referencedColumnName = "id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private User user;
 
     public static UserChattingRoom of(JoinChattingRoomDTO joinAlertGroupDTO) {

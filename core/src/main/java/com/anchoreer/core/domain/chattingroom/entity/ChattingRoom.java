@@ -1,11 +1,13 @@
 package com.anchoreer.core.domain.chattingroom.entity;
 
+import com.anchoreer.core.domain.base.BaseEntity;
 import com.anchoreer.core.domain.chattingroom.dto.CreateChattingRoomDTO;
 import com.anchoreer.core.domain.mappings.entity.UserChattingRoom;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Comment;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name= "chatting_room")
 @Entity
-public class ChattingRoom {
+public class ChattingRoom extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Comment(value = "id")
@@ -25,9 +27,6 @@ public class ChattingRoom {
     @Comment(value = "이름")
     @Column(length = 50,nullable = false, unique = true)
     private String name;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "chattingRoom")
-    private List<UserChattingRoom> groupMemberInfoEntities = new ArrayList<>();
 
     public static ChattingRoom of(CreateChattingRoomDTO createAlertGroupDTO) {
         return ChattingRoom.builder()
