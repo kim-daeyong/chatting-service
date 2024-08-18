@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name= "user")
+@Table(name= "users")
 @Entity
 public class User extends BaseEntity {
 
@@ -23,10 +23,14 @@ public class User extends BaseEntity {
     @Comment(value = "id")
     private Long id;
 
+    @Comment(value = "유저 id")
+    @Column(length = 50, nullable = false, unique = true)
+    private String userId;
+
     @Comment(value = "이메일")
     @Column(length = 50, nullable = false, unique = true)
     private String email;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<UserChattingRoom> memberGroupInfoEntities = new ArrayList<>();
+    private List<UserChattingRoom> userChattingRooms = new ArrayList<>();
 }
